@@ -10,6 +10,7 @@ public class SilentUpdateManager {
 
     //类初始化时，不初始化这个对象(延时加载，真正用的时候再创建)
     private static SilentUpdateManager instance;
+    private UpdateCallBack updateCallback;
 
     //构造器私有化
     private SilentUpdateManager(){}
@@ -22,9 +23,19 @@ public class SilentUpdateManager {
         return instance;
     }
 
-
-    public  void updateConfigure(){
+    //设置监听
+    public void setUpdateCallback(UpdateCallBack updateCallback) {
+        this.updateCallback = updateCallback;
 
     }
 
-}
+    public void updateApk(String uri) {
+        if (this.updateCallback!= null){
+            this.updateCallback.onUpdateAPKCallback(uri);
+        }
+    }
+
+
+
+
+    }
