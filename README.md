@@ -2,7 +2,7 @@
  * @Author: gongyonghui
  * @Date: 1985-10-26 16:15:00
  * @LastEditors: gongyonghui
- * @LastEditTime: 2019-09-17 19:20:37
+ * @LastEditTime: 2019-09-17 19:25:52
  * @Description: file content
  -->
 
@@ -67,7 +67,7 @@
 import RNSilentUpdate from 'react-native-silent-update';
 
 // TODO: What to do with the module?
-        RNSilentUpdate.updateAPK('https://raw.githubusercontent.com/Marcello168/TestAPK/master/app-release.apk')
+RNSilentUpdate.updateAPK('https://raw.githubusercontent.com/Marcello168/TestAPK/master/app-release.apk')
 
 ```
   
