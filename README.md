@@ -1,23 +1,49 @@
+<!--
+ * @Author: gongyonghui
+ * @Date: 1985-10-26 16:15:00
+ * @LastEditors: gongyonghui
+ * @LastEditTime: 2019-09-17 19:20:37
+ * @Description: file content
+ -->
 
-# react-native-silent-update
+# APK 拥有Root权限的 静默更新 react-native-silent-update
 
-## Getting started
+## 开始使用
 
 `$ npm install react-native-silent-update --save`
 
-### Mostly automatic installation
+### 链接原生库
 
 `$ react-native link react-native-silent-update`
 
-### Manual installation
+### 在`MainApplication`的`onCreate`方法里面增加如下代码
+```java
+   SilentUpdateManager.getInstance().setUpdateCallback(new UpdateCallBack() {
+      @Override
+      public void onUpdateAPKCallback(String uri) {
+        Log.d(TAG, "App onUpdateAPKCallbackUri: " +uri);
 
+        SilentUpdateUtil.getInstance().downloadAndInstallThroughCache(getApplicationContext(), uri);
+      }
+    });
 
-#### iOS
+    SilentUpdateUtil.getInstance().setSilentUpdateListener(new SilentUpdateListener() {
+      @Override
+      public void onUpdateSuccess() {
+        Log.d("Tag", "App onUpdateSuccess: ");
+        Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+        intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent2);
+      }
+      @Override
+      public void onUpdateFail() {
+        Log.d("TAG", "App onUpdateFail: ");
+      }
+    });
+```
 
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-silent-update` and add `RNSilentUpdate.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNSilentUpdate.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
+### 手动安装
+
 
 #### Android
 
@@ -34,20 +60,14 @@
       compile project(':react-native-silent-update')
   	```
 
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
-
-1. In Visual Studio add the `RNSilentUpdate.sln` in `node_modules/react-native-silent-update/windows/RNSilentUpdate.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using Silent.Update.RNSilentUpdate;` to the usings at the top of the file
-  - Add `new RNSilentUpdatePackage()` to the `List<IReactPackage>` returned by the `Packages` method
 
 
-## Usage
+## 使用方法
 ```javascript
 import RNSilentUpdate from 'react-native-silent-update';
 
 // TODO: What to do with the module?
-RNSilentUpdate;
+        RNSilentUpdate.updateAPK('https://raw.githubusercontent.com/Marcello168/TestAPK/master/app-release.apk')
+
 ```
   

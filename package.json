@@ -1,15 +1,26 @@
 
 {
   "name": "react-native-silent-update",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "silent-update",
+    "silent",
+    "update"
   ],
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Marcello168/react-native-silent-update"
+  },
+  "bugs": {
+      "url": "https://github.com/Marcello168/react-native-silent-update/issues"
+  },
+  "homepage": "https://github.com/Marcello168/react-native-silent-update#readme",
   "author": "",
   "license": "",
   "peerDependencies": {
