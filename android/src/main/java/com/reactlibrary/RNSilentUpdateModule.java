@@ -1,6 +1,7 @@
 
 package com.reactlibrary;
 
+import com.dlc.silentupdatelibrary.SilentUpdateUtil;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -19,4 +20,10 @@ public class RNSilentUpdateModule extends ReactContextBaseJavaModule {
   public String getName() {
     return "RNSilentUpdate";
   }
+
+@ReactMethod
+  public  void updateAPK(String uri){
+    SilentUpdateUtil.getInstance().downloadAndInstall(uri);
+  }
+
 }

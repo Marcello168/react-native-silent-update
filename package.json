@@ -1,20 +1,44 @@
-
 {
-  "name": "react-native-silent-update",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "_from": "react-native-silent-update",
+  "_id": "react-native-silent-update@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-1w2re3YprjYvqw7gU4T74RAhK1vixmZwamIWgbb62yym9+HGbTOeB+XltEmpf33ORNdjYM0WSYJms6oD2w6vRQ==",
+  "_location": "/react-native-silent-update",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "react-native-silent-update",
+    "name": "react-native-silent-update",
+    "escapedName": "react-native-silent-update",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-silent-update/-/react-native-silent-update-1.0.0.tgz",
+  "_shasum": "e2787666c0f15d6f7ac885d1a787113009312b44",
+  "_spec": "react-native-silent-update",
+  "_where": "/Users/gongyonghui/Documents/Git/TorontoAPK",
+  "author": "",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "## Getting started",
   "keywords": [
     "react-native"
   ],
-  "author": "",
   "license": "",
+  "main": "index.js",
+  "name": "react-native-silent-update",
   "peerDependencies": {
     "react-native": "^0.41.2",
     "react-native-windows": "0.41.0-rc.1"
-
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
 }
