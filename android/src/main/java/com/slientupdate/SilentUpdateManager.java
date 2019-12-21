@@ -1,4 +1,4 @@
-package com.reactlibrary;
+package com.slientupdate;
 
 import android.content.Intent;
 import android.util.Log;

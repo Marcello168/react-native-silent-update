@@ -1,5 +1,5 @@
 
-package com.reactlibrary;
+package com.slientupdate;
 
 import android.util.Log;
 
